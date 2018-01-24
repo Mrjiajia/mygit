@@ -1,0 +1,104 @@
+基础命令：
+git init 初始化版本库 
+
+cd admin 切换到admin下
+
+git config --global user.name "lsy"
+git config --global user.email "16@qq.com"
+
+git init admin 创建并初始化版本库
+
+vim index.php 在工作区创建index.php
+
+git add index.php 将index添加到暂存区
+        --all将当前工作区所有内容添加
+        . 将所有git中的修改文件添加
+Git add （你要添加的文件名）精确添加
+
+git commit -m "第一次添加index.php"
+
+git status 查询状态
+
+git checkout -- index.php 撤销在工作区的【修:
+
+git diff index.php 修改之前与之后的不同之处
+
+git log 查询历史版本{密码为哈希密码}
+
+git log --pretty=oneline 一行显示
+
+cat index.php 查看index.php的内容
+
+git reset --hard HEAD^回退到上一次
+                 HEAD~10 回退10次
+          --hard （版本号）回退指定哪一次
+ 
+git reset HEAD index.php 撤销已添加在缓存区的内容
+
+删除：rm 文件名  删工作区内容
+      git rm 文件名  删除版本库 
+
+
+SSH：
+ssh-keygen -t rsa -C "1@qq.com"生成密钥对
+
+cat~/.ssh/id_rsa.pub 生成密钥
+
+复制粘贴
+
+ssh -T git@git.oschina.net 验证是否成功
+
+
+上传下载：
+上传：
+现有本地库，再有远程库，做本地库关联远程库
+        1.在OSchina上新建一个空仓库
+        2.将本地库与远程仓库链关联，可以更新获取数据
+          git remote add origin  + 你的远程地址
+        3.git remote -v 查看当前远程仓库的地址
+	  git remote rm origin 删除远程地址
+
+注意：  4.如果有默认文件“README.md”
+          则必须用：git pull origin master(本地与远程合并)
+        5.git push -u origin master 推送
+           
+下载=克隆
+git clone 远程仓库地址[git/https]
+或
+ mkdir 文件夹名
+ cd 文件夹名
+ git clone 远程仓库地址[git/https]
+
+分支：
+git branch 查看分支
+git branch <name>   创建分支
+git checkout <name> 切换分支
+git checkout -b <name>  切换并创建分支
+    touch xxx.xx   在新分支下创建文件并添加
+
+git merge <name> 合并某分支到当前分支
+git diff xxx.xx    
+
+三方合并
+git commit -a -m "注释"
+
+
+git branch -d <name>删除分支
+
+解决冲突：
+
+
+查看分支的合并情况
+git log --graph --pretty=oneline
+git log --graph --pretty=oneline --abbrev-commit
+
+查看分支合并情况
+git log --graph
+
+
+
+
+
+
+
+
